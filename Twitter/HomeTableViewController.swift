@@ -32,6 +32,7 @@ class HomeTableViewController: UITableViewController {
         
         TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams, success: { (tweets: [NSDictionary]) in
             
+            
             self.tweetArray.removeAll()
             for tweet in tweets {
                 self.tweetArray.append(tweet)
@@ -41,7 +42,7 @@ class HomeTableViewController: UITableViewController {
             self.myrefreshControl.endRefreshing()
             
         }, failure: { Error in
-            print("Could not receive tweets! oh no!! load regular")
+            print("Could not receive tweets! oh no!!")
         })
     }
     
@@ -60,7 +61,7 @@ class HomeTableViewController: UITableViewController {
             self.tableView.reloadData()
             
         }, failure: { Error in
-            print("Could not receive tweets! oh no!! loadMore")
+            print("Could not receive tweets! oh no! I'm so fustrated")
         })
     }
     
